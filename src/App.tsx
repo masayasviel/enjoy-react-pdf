@@ -6,16 +6,13 @@ import {
   View,
   Font,
   Document,
-  StyleSheet
 } from '@react-pdf/renderer';
 
 import fontRegular from './fonts/Nasu-Regular.ttf';
 import fontBold from './fonts/Nasu-Bold.ttf';
 import DefaultPageApp from './components/default-page';
-
-const styles = StyleSheet.create({
-  jap: { fontSize: '11pt', fontFamily: 'Nasu-Regular' }
-});
+import TitlePageApp from './components/title-page';
+import { CommonStyle } from './constants/style';
 
 const MyDocument = () => {
   Font.register({
@@ -29,9 +26,10 @@ const MyDocument = () => {
 
   return (
     <Document>
+      <TitlePageApp></TitlePageApp>
       <DefaultPageApp>
         <View>
-          <Text style={styles.jap}>あああabc</Text>
+          <Text style={CommonStyle.jap}>あああabc</Text>
           <Text>Section #2</Text>
         </View>
         <View>
